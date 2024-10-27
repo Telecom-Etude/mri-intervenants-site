@@ -15,4 +15,29 @@ def insert_mri(mri):
     mri_soup = BeautifulSoup(mri)
     title=mri_soup.find("h1").text
     print(title)
+    h4s=mri_soup.find_all("h4")
+    print(h4s)
+    domaine = h4s[1].text
+    retribution = h4s[3].text
+    difficulty = h4s[5].text
+    tds = mri_soup.find_all("td")
+    print("Recherche de la description:")
+    count=0
+    description=""
+    for td in tds:
+        if (td.get("style")=="padding-top:0;padding-right:18px;padding-bottom:9px;padding-left:18px"):
+            count+=1
+            if count==2:
+                description=td.text
+                break
     
+    collection.insert_one({
+        "title":title,
+        "description":description,
+        "date":now,
+        "domaine":domaine,
+        "retribution":retribution,
+        "difficulty":difficulty,
+        "mri":mri
+        })
+           

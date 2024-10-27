@@ -26,6 +26,7 @@ def new_mri():
         if data["secret"] != secret:
             return "Unauthorized"
         print("Accepté")
+        database.insert_mri(data["body"])
     except:
         print("Pas de donnée dans la request")
         return "Error"
@@ -33,4 +34,4 @@ def new_mri():
 
 
 if __name__ == '__main__':
-    app.run(debug=False,port=80,host="0.0.0.0") #Lance l'application
+    app.run(debug=False,port=25565,host="0.0.0.0") #Lance l'application
