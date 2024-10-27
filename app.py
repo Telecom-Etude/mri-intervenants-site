@@ -40,10 +40,14 @@ def new_mri():
 
 @app.route("/view/<identifier>",methods=["GET"])
 def view(identifier):
-    html = database.getHtml(identifier)
-    if html=="":
+    mri = database.getMri(identifier)
+    if mri=="":
         app.redirect("/",404)
-    return render_template("view.html",html=html)
+    return render_template("view.html",html=mri['mri'],title=mri['title'])
 
 if __name__ == '__main__':
     app.run(debug=False,port=25565,host="0.0.0.0") #Lance l'application
+
+@app.route("/favicon.ico")
+def favicon():
+    return app.send_static_file("favicon.ico")

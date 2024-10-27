@@ -1,7 +1,9 @@
+<!DOCTYPE html>
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tous les MRI en cours</title>
+    <title>{{title}}</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
     <link rel="stylesheet" href="static/style/main.css" />
     <link rel="stylesheet" href="static/style/mri.css" />
     <script src="/static/assets/jquery.js"></script>
@@ -22,7 +24,14 @@
     <br />
     <br />
     <br />
-    <div class="mri_full">
+    <div id="mri_full" class="mri_full">
         {{html}}
     </div>
   </body>
+
+  <script>
+    let mri = document.getElementById("mri_full")
+    const data = mri.textContent;
+    mri.textContent=''
+    mri.innerHTML=data
+  </script>

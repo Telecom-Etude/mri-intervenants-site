@@ -3,7 +3,7 @@ import pymongo
 import json
 from bs4 import BeautifulSoup
 from pymongo import MongoClient
-#from bson.objectid import ObjectId
+from bson.objectid import ObjectId
 
 uri = "mongodb://localhost:27017/MRI"
 client = MongoClient(uri)
@@ -43,14 +43,15 @@ def insert_mri(mri):
            
 def get_mris():
     now=datetime.datetime.now(tz=datetime.timezone.utc)
+    month_ago=now-datetime.timedelta(days=30)
     dico_recherche={
         "date":{
-            "$gt":now-datetime.timedelta(days=30)
+            "$gt":month_ago
     }}
-    return collection.find(dico_recherche,{"mri":0})
+    return collection.find(dico_recherche,{"mri":0,"date":0})
 
-def getHtml(identifier):
-    return collection.find_one({"_id":identifier}).get("mri")
-
+def getMri(identifier):
+    return collection.find_one({"_id":ObjectId(identifier)})
 def cleanResult(result):
     result["_id"]=str(result["_id"])
+    return result
