@@ -41,3 +41,16 @@ def insert_mri(mri):
         "mri":mri
         })
            
+def get_mris():
+    now=datetime.datetime.now(tz=datetime.timezone.utc)
+    dico_recherche={
+        "date":{
+            "$gt":now-datetime.timedelta(days=30)
+    }}
+    return collection.find(dico_recherche,{"mri":0})
+
+def getHtml(identifier):
+    return collection.find_one({"_id":identifier}).get("mri")
+
+def cleanResult(result):
+    result["_id"]=str(result["_id"])

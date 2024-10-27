@@ -19,6 +19,12 @@ def ping():
         print("Pas de donnée dans la request")
     return "pong"
 
+@app.route("/get_mri",methods=["GET","POST"])
+def get_mri():
+    mris=database.get_mris()
+    result_list=[database.cleanResult(mri) for mri in mris]
+    return json.dumps(result_list)
+
 @app.route('/new',methods=["POST"])
 def new_mri():
     try:
@@ -32,6 +38,12 @@ def new_mri():
         return "Error"
     return "OK"
 
+@app.route("/view/<identifier>",methods=["GET"])
+def view(identifier):
+    html = database.getHtml(identifier)
+    if html=="":
+        app.redirect("/",404)
+    return render_template("view.html",html=html)
 
 if __name__ == '__main__':
     app.run(debug=False,port=25565,host="0.0.0.0") #Lance l'application

@@ -1,0 +1,28 @@
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tous les MRI en cours</title>
+    <link rel="stylesheet" href="static/style/main.css" />
+    <link rel="stylesheet" href="static/style/mri.css" />
+    <script src="/static/assets/jquery.js"></script>
+    <script>
+      $(function () {
+        $("#navbar").load("/static/html/navbar.html", function () {
+          $("#accueil").addClass("active");
+        });
+      });
+      $(function () {
+        $("#logovecteur").load("/static/html/logovecteur.html");
+      });
+    </script>
+  </head>
+  
+  <body>
+    <div id="navbar"></div>
+    <br />
+    <br />
+    <br />
+    <div class="mri_full">
+        {{html}}
+    </div>
+  </body>

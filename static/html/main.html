@@ -87,3 +87,68 @@
     </button>
   </div>
 </body>
+
+<script>
+
+function fetchMri(){
+  let xml = new XMLHttpRequest;
+  xml.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      generateView(this.responseText);
+    }
+  }
+  xml.open("GET", "/get_mri", true);
+  xml.send();
+}
+
+function generateView(mris){
+  let mri_list = JSON.parse(mris);
+  let mri_grid = document.getElementById("mri_grid");
+  for (let i = 0; i < mri_list.length; i++) {
+    let mri_item = document.createElement("button");
+    mri_item.classList.add("mri_item");
+    mri_item.onclick = function () {
+      location.href = "/view/"+mri_list["_id"];
+    };
+
+    let mri_title = document.createElement("div");
+    mri_title.classList.add("mri_title");
+    let title = document.createElement("h1");
+    title.innerHTML = mri_list[i].title;
+    mri_title.appendChild(title);
+    let mri_category = document.createElement("div");
+    mri_category.classList.add("mri_category");
+    let domaine = document.createElement("span");
+    domaine.textContent = "Domaine : " +mri_list[i].domaine;
+    mri_category.appendChild(domaine);
+    let retribution = document.createElement("span");
+    retribution.textContent = "Rétribution : " +mri_list[i].retribution;
+    mri_category.appendChild(retribution);
+    let difficulty = document.createElement("span");
+    difficulty.textContent = "Difficulté : " +mri_list[i].difficulty;
+    mri_category.appendChild(difficulty);
+    mri_title.appendChild(mri_category);
+    mri_item.appendChild(mri_title);
+    
+
+    let mri_desc_div = document.createElement("div");
+    mri_desc_div.classList.add("mri_desc_div");
+    let mri_desc_intro = document.createElement("h3");
+    mri_desc_intro.textContent = "Description : ";
+    let mri_desc = document.createElement("p");
+    mri_desc.classList.add("mri_desc");
+    mri_desc.innerHTML = mri_list[i].description;
+    mri_desc_div.appendChild(mri_desc_intro);
+    mri_desc_div.appendChild(mri_desc);
+    mri_item.appendChild(mri_desc_div);
+
+    let more_info = document.createElement("a");
+    more_info.classList.add("more_info");
+    more_info.textContent = "Plus d'infos / Postuler...";
+    mri_item.appendChild(more_info);
+    
+    mri_grid.appendChild(mri_item);
+
+  }
+}
+</script>
