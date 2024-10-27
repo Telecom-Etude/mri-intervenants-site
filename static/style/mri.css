@@ -1,0 +1,112 @@
+.contrast_color{
+    color:var(--bs-emphasis-color) !important;
+}
+
+.contrast_je{
+    color : var(--je-orange) !important;
+}
+
+p,a{
+    font-family: __avenir_d78903,__avenir_Fallback_d78903;
+}
+
+#mri_grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap:1rem;
+}
+
+.mri_item{
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    margin:auto;
+    max-width:80%;
+    border: 2px solid var(--je-orange);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    color:var(--bs-emphasis-color); 
+}
+
+.mri_title{
+    margin-right:2rem;
+}
+
+.mri_title>h1{
+    margin-bottom:1rem;
+}
+
+.mri_desc_div{
+    display:block
+}
+
+.mri_category{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap:wrap;
+    font-size:smaller;
+    align-items: center;
+}
+
+.mri_category>span{
+    font-size:small;
+    border: 1px solid var(--je-orange);
+    border-radius: 0.5rem;
+    padding: 0.3rem;
+    color:var(--bs-emphasis-color);
+}
+
+.more_info{
+    display:block;
+    text-align:right;
+    font-size:small;
+    color:var(--bs-emphasis-color);
+    opacity:70%;
+    grid-column:2;
+}
+
+.mri_full{
+    margin:auto;
+    width:fit-content;
+    margin:auto;
+    /* background-color:white; */
+}
+
+.mri_full h1{
+    color:var(--bs-emphasis-color) !important;
+}
+
+@media (max-width:1000px) {
+    .mri_item{
+        grid-template-columns: 1fr;
+        padding:0.2rem;
+    }
+    .mri_desc_div{
+        display:none;
+    }
+    .mri_title{
+        display:grid;
+        grid-template-columns: 2fr 1fr;
+        grid-gap: 0.3rem;
+        margin-right:0;
+    }
+
+    .mri_title>h1{
+        align-self:center;
+        font-size:large;
+        line-height: normal;
+        text-align:center;
+    }
+
+    .mri_category{
+        justify-content: center;
+    }
+
+    .mri_title>h1{
+        margin-bottom:0;
+    }
+
+    .more_info{
+        display:none;
+    }
+}

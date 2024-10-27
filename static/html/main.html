@@ -1,0 +1,89 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tous les MRI en cours</title>
+  <link rel="stylesheet" href="static/style/main.css" />
+  <link rel="stylesheet" href="static/style/mri.css" />
+  <script src="/static/assets/jquery.js"></script>
+  <script>
+    $(function () {
+      $("#navbar").load("/static/html/navbar.html", function () {
+        $("#accueil").addClass("active");
+      });
+    });
+    $(function () {
+      $("#logovecteur").load("/static/html/logovecteur.html");
+    });
+  </script>
+</head>
+
+<body>
+  <div id="navbar"></div>
+  <br />
+  <br />
+  <br />
+  <header class="py-6 space-y-6">
+    <h1
+      class="font-semibold text-center bg-gradient-to-r from-primary to-destructive w-fit m-auto text-transparent bg-clip-text"
+    >
+      Telecom Etude
+    </h1>
+    <h2 class="text-center">Toutes les études en recherche d'intervenants</h2>
+    <p style="text-align: center">Cliquez pour plus de détails</p>
+  </header>
+  <br />
+  <div id="mri_grid">
+    <button class="mri_item" onclick="location.href='/static/html/view_exemple.html';">
+      <div class="mri_title">
+        <h1>
+          Réalisation du Backend d'une application mobile de gestion de
+          brocantes
+        </h1>
+        <div class="mri_category">
+          <span> DOMAINE : Application Mobile </span>
+          <span> RÉTRIBUTION : 3400€-4000€ </span>
+          <span> DIFFICULTÉ : Elevée </span>
+        </div>
+      </div>
+      <div class="mri_desc_div">
+        <h3>Description :</h3>
+        <p class="mri_desc">
+          Bonjour à toutes et à tous,
+          <br>
+          Nous vous proposons aujourd'hui une étude
+          de réalisation du backend d'une application mobile. L'application
+          existe déjà, mais possède un code comportant trop de problèmes.
+          L'objectif serait donc de refaire l'application. C'est une application
+          de gestion de brocante.
+        </p>
+      </div>
+      <a class="more_info">Plus d'infos / Postuler...</a>
+    </button>
+    <button class="mri_item"onclick="location.href='/static/html/view_exemple_2.html';">
+      <div class="mri_title">
+        <h1>
+          Réalisation d'un cahier des charges anticipant le développement d'un
+          outil pour une société de l’économie sociale et solidaire
+        </h1>
+        <div class="mri_category">
+          <span> DOMAINE : Développement Web </span>
+          <span> RÉTRIBUTION : 880€ </span>
+          <span> Difficulté : Moyenne </span>
+        </div>
+      </div>
+      <div class="mri_desc_div">
+        <h3>Description :</h3>
+        <p class="mri_desc">
+          Bonjour à toutes et à tous,
+          <br>
+          Le client est spécialisé dans
+          l’accompagnement des personnes âgées pour l’adaptation de leur lieu de
+          vie, et souhaiterait développer une plateforme collaborative afin de
+          centraliser et simplifier la gestion de l'accompagnement à domicile.
+        </p>
+        
+      </div>
+      <a class="more_info">Plus d'infos / Postuler...</a>
+    </button>
+  </div>
+</body>

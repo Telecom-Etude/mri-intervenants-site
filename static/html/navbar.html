@@ -1,0 +1,178 @@
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<head>
+  <link href="/static/assets/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="/static/assets/darkmode_switch.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/style/main.css" />
+  <link rel="stylesheet" href="/static/style/mri.css" />
+  <link
+    rel="preload"
+    href="/static/font/Avenir-Regular.otf"
+    as="font"
+    crossorigin=""
+    type="font/otf"
+  />
+</head>
+
+<body>
+  <nav
+    class="navbar fixed-top navbar-expand-lg navbar-dark flex justify-between border-b-2 border-accent"
+    style="background-color: var(--background)"
+  >
+    <div class="bigger_text_mobile container-fluid space-x-1">
+      <a
+        class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 rounded-none px-0 py-0 flex justify-start px-0 py-0"
+        href="/"
+        ><img
+          alt="Logo Telecom Etude"
+          fetchpriority="high"
+          width="500"
+          height="200"
+          decoding="async"
+          data-nimg="1"
+          class="h-full w-auto"
+          style="color: transparent"
+          src="/static/media/logo-text.svg"
+      /></a>
+      <a class="navbar-brand bigger_text_mobile contrast_color" href="#">MRI</a>
+      <!-- <button
+        class="navbar-toggler bigger_mobile"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button> -->
+      <button
+        class="navbar-toggler inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 p-2 rounded-none"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-menu contrast_je"
+        >
+          <line x1="4" x2="20" y1="12" y2="12"></line>
+          <line x1="4" x2="20" y1="6" y2="6"></line>
+          <line x1="4" x2="20" y1="18" y2="18"></line>
+        </svg>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+        <ul class="navbar-nav" style="align-items: center">
+          <li class="">
+            <a
+              class="contrast_color group inline-flex h-10 w-max items-center justify-center bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 group rounded-none"
+              href="/"
+              >Accueil</a
+            >
+          </li>
+          <!-- <li class="">
+            <a
+              class="contrast_color group inline-flex h-10 w-max items-center justify-center bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 group rounded-none"
+              href="/"
+              >Profil</a
+            >
+          </li> -->
+          <li style="margin: 10px">
+            <div class="onoffswitch">
+              <input
+                type="checkbox"
+                name="onoffswitch"
+                class="onoffswitch-checkbox"
+                id="darkmode_swap"
+                tabindex="0"
+                checked
+              />
+              <label class="onoffswitch-label" for="darkmode_swap"></label>
+            </div>
+          </li>
+          <li
+            class="nav-item items-center whitespace-nowrap text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 font-medium flex flex-col justify-center text-primary-foreground call2action min-w-[150px] h-10 px-4 py-2 w-full rounded-none group/buttoncontact pt-0 pb-0 pl-0 pr-0"
+          >
+            <a
+              class="w-full flex space-x-2 justify-center items-center px-4 h-full"
+              href="https://telecom-etude.fr/fr/contact"
+              data-radix-collection-item=""
+              ><p>Formulaire de contact</p>
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 448 512"
+                class="group-hover/buttoncontact:animate-bounce-x"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+                data-darkreader-inline-stroke=""
+                style="
+                  --darkreader-inline-stroke: currentColor;
+                  --darkreader-inline-fill: currentColor;
+                "
+                data-darkreader-inline-fill=""
+              >
+                <path
+                  d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
+                ></path></svg
+            ></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</body>
+<script src="/static/assets/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  //Script pour le darkmode sur chaque page avec mémoire en cookie et auto-setter en première visite
+  const getStoredTheme = () => localStorage.getItem("theme");
+  const setStoredTheme = (theme) => localStorage.setItem("theme", theme);
+
+  const getPreferredTheme = () =>
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+
+  if (getStoredTheme() === null) {
+    const window_theme = getPreferredTheme();
+    setStoredTheme(window_theme);
+    setTheme(window_theme);
+  }
+
+  setTheme(getStoredTheme());
+  if (getStoredTheme() === "dark") {
+    document.getElementById("darkmode_swap").checked = true;
+  } else {
+    document.getElementById("darkmode_swap").checked = false;
+  }
+
+  function setTheme(theme) {
+    document.documentElement.setAttribute("data-bs-theme", theme);
+  }
+
+  function toggleTheme() {
+    if (getStoredTheme() === "light") {
+      setStoredTheme("dark");
+    } else {
+      setStoredTheme("light");
+    }
+    setTheme(getStoredTheme());
+  }
+
+  document
+    .getElementById("darkmode_swap")
+    .addEventListener("click", toggleTheme);
+</script>
