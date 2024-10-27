@@ -30,7 +30,9 @@ def insert_mri(mri):
             if count==2:
                 description=td.text
                 break
-    
+    centers = mri_soup.find_all("center")
+    centers[1].decompose()
+    mri=str(mri_soup)
     collection.insert_one({
         "title":title,
         "description":description,
