@@ -27,6 +27,12 @@ p,a{
     color:var(--bs-emphasis-color); 
 }
 
+.mri_item:hover{
+    border-color:var(--je-red);
+    border-radius: 1rem;
+    transition: 0.5s ease-out;
+}
+
 .mri_title{
     margin-right:2rem;
 }
@@ -46,6 +52,7 @@ p,a{
     flex-wrap:wrap;
     font-size:smaller;
     align-items: center;
+    gap:1vw;    
 }
 
 .mri_category>span{

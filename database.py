@@ -13,6 +13,7 @@ collection=database["MRI"]
 def insert_mri(mri):
     now=datetime.datetime.now(tz=datetime.timezone.utc)
     mri_soup = BeautifulSoup(mri)
+    mri_soup = BeautifulSoup(str(mri_soup.center.extract()),"html.parser")
     title=mri_soup.find("h1").text
     print(title)
     h4s=mri_soup.find_all("h4")
