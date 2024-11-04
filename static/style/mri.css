@@ -45,6 +45,12 @@ p,a{
     display:block
 }
 
+.mri_desc_div>h3{
+    display:block;
+    margin-bottom:1vw;
+    text-align:left;
+}
+
 .mri_category{
     display:flex;
     flex-direction: row;
