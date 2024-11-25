@@ -6,7 +6,6 @@ from pymongo import MongoClient
 from bson.objectid import ObjectId
 
 uri = "mongodb://localhost:27017/MRI"
-uri = "mongodb://localhost:27017/jeux"
 with open('dbLogin.json', 'r') as file:
     data = json.load(file)
 client = MongoClient(uri,username=data["user"],password=data["pass"],authSource="admin")
