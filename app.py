@@ -30,10 +30,12 @@ def new_mri():
     try:
         data = request.get_json()
         if data["secret"] != secret:
+            print("Erreur de secret")
             return "Unauthorized"
         print("Accepté")
         database.insert_mri(data["body"])
-    except:
+    except Exception as e:
+        print(e)
         print("Pas de donnée dans la request")
         return "Error"
     return "OK"
@@ -46,7 +48,7 @@ def view(identifier):
     return render_template("view.html",html=mri['mri'],title=mri['title'])
 
 if __name__ == '__main__':
-    app.run(debug=False,port=25565,host="0.0.0.0") #Lance l'application
+    app.run(debug=False,port=8080,host="0.0.0.0") #Lance l'application
 
 @app.route("/favicon.ico")
 def favicon():

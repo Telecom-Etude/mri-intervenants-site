@@ -28,13 +28,16 @@ def insert_mri(mri):
     count=0
     description=""
     for td in tds:
-        if (td.get("style")=="padding-top:0;padding-right:18px;padding-bottom:9px;padding-left:18px"):
+        print(td.get("style"))
+        if (td.get("style")=='padding: 0px 18px 9px; font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;'):
             count+=1
-            if count==2:
-                description=td.text
+            if count==3:
+                description=td.text[12:]
                 break
-    centers = mri_soup.find_all("center")
-    centers[1].decompose()
+    #centers = mri_soup.find_all("center")
+    #print("Centers :",centers)
+    #print("Len centers", len(centers))
+    #centers[1].decompose()
     mri=str(mri_soup)
     collection.insert_one({
         "title":title,
@@ -45,7 +48,7 @@ def insert_mri(mri):
         "difficulty":difficulty,
         "mri":mri
         })
-           
+
 def get_mris():
     now=datetime.datetime.now(tz=datetime.timezone.utc)
     month_ago=now-datetime.timedelta(days=30)
