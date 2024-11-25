@@ -1,4 +1,5 @@
 secret.txt
+dbLogin.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
