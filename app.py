@@ -23,7 +23,8 @@ def ping():
 def get_mri():
     mris=database.get_mris()
     result_list=[database.cleanResult(mri) for mri in mris]
-    return json.dumps(result_list)
+    result_json=json.dumps(result_list[::-1])
+    return result_json
 
 @app.route('/new',methods=["POST"])
 def new_mri():
