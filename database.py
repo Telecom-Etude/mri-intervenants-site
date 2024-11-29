@@ -38,6 +38,9 @@ def insert_mri(mri):
     #print("Centers :",centers)
     #print("Len centers", len(centers))
     #centers[1].decompose()
+    scripts=mri_soup.find_all("script")
+    for script in scripts:
+        script.decompose()
     mri=str(mri_soup)
     collection.insert_one({
         "title":title,

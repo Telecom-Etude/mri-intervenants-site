@@ -43,10 +43,13 @@ def new_mri():
 
 @app.route("/view/<identifier>",methods=["GET"])
 def view(identifier):
-    mri = database.getMri(identifier)
-    if mri=="":
-        app.redirect("/",404)
-    return render_template("view.html",html=mri['mri'],title=mri['title'])
+    try:
+        mri = database.getMri(identifier)
+        if mri=="":
+            return app.redirect("/",404)
+        return render_template("view.html",html=mri['mri'],title=mri['title'])
+    except:
+        return app.redirect("/",404)
 
 if __name__ == '__main__':
     app.run(debug=False,port=8080,host="0.0.0.0") #Lance l'application
